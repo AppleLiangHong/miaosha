@@ -1,0 +1,23 @@
+server:
+  port: 8088
+spring:
+  profiles:
+    active: dev
+mybatis:
+  type-aliases-package: com.mldy.miaosha.project.dataobject
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: false
+    use-generated-keys: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    jdbc-type-for-null: null
+mapper:
+  identity: MYSQL
+  mappers: com.mldy.miaosha.core.common.MyMapper
+  not-empty: true
+  enum-as-simple-type: true
+pagehelper:
+  params: count=countSql
+  reasonable: false
+  support-methods-arguments: true
+  helper-dialect: mysql
